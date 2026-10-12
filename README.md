@@ -38,9 +38,8 @@ La conexión pública y el proveedor de correo fueron comprobados; la confirmaci
    - `http://localhost:3040/auth/callback`
    - `http://localhost:3040/auth/callback?next=/update-password`
    - Los equivalentes HTTPS de producción.
-4. Como portalcripto es un proyecto compartido, conserva las URLs necesarias para las otras aplicaciones. Revisa el impacto antes de cambiar su Site URL global.
-5. Mantén el proveedor Email habilitado y la confirmación de correo activada. Las plantillas deben conservar el enlace de confirmación estándar de Supabase (`{{ .ConfirmationURL }}`), que devuelve un código PKCE al callback. Abre los enlaces de registro y recuperación en el mismo navegador donde solicitaste el correo.
-6. Para producción configura SMTP y revisa los límites de envío, límites de autenticación y política de contraseñas del proyecto. La aplicación requiere contraseñas nuevas de 12 a 128 caracteres. No incluye un limitador distribuido propio; depende de los límites de Supabase.
+4. Mantén el proveedor Email habilitado y la confirmación de correo activada. Las plantillas deben conservar el enlace de confirmación estándar de Supabase (`{{ .ConfirmationURL }}`), que devuelve un código PKCE al callback. Abre los enlaces de registro y recuperación en el mismo navegador donde solicitaste el correo.
+5. Para producción configura SMTP y revisa los límites de envío, límites de autenticación y política de contraseñas del proyecto. La aplicación requiere contraseñas nuevas de 12 a 128 caracteres. No incluye un limitador distribuido propio; depende de los límites de Supabase.
 
 Si la tabla aún no existe, el dashboard muestra los datos de Auth y un aviso para completar la configuración de perfiles. No se oculta el problema de base de datos.
 
